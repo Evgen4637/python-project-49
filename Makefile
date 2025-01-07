@@ -1,7 +1,10 @@
-setup: install build package-install brain-games
+setup: install make lint build package-install brain-games
 
 install:
 	uv sync
+
+make lint:
+	uv run ruff check brain_games
 
 build:
 	uv build
