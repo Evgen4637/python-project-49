@@ -6,7 +6,7 @@ def main():
 
     greet()
 
-    welcome_user()
+    print('Hello, ' + welcome_user())
 
 
 if __name__ == "__main__":
