@@ -1,4 +1,6 @@
-setup: install make lint build package-install brain-games
+setup: install make lint build package-install
+
+test: install build package-install brain-even
 
 install:
 	uv sync
@@ -14,3 +16,6 @@ package-install:
 
 brain-games:
 	uv run brain-games
+
+brain-even:
+	uv run brain-even
