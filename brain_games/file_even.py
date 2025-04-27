@@ -11,21 +11,18 @@ def even():
     while num < 3:
         random_number = rand_num()
         print(f"Question: {random_number}")
-        random = random_number % 2
+        is_even = random_number % 2 == 0
+        correct_answer = "yes" if is_even else "no"
         answer = input("Your answer: ")
+        while answer not in ["yes", "no"]:
+            print("Please answer 'yes' or 'no'.")
+            answer = input("Your answer: ")
 
-        if random != 0:
-            if answer == "yes":
-                return print(f"'{answer}' is wrong answer ;(. Correct answer was 'no'. Let's try again, {name}!") # noqa
-            else:
-                num += 1
-                print("Correct!")
-
-        if random == 0:
-            if answer == "yes":
-                num += 1
-                print("Correct!")
-            else:
-                return print(f"'{answer}' is wrong answer ;(. Correct answer was 'yes'. Let's try again, {name}!") # noqa
+        if answer == correct_answer:
+            num += 1
+            print("Correct!")
+        else:
+            return print(
+                f"'{answer}' is wrong answer ;(. Correct answer was '{correct_answer}'. Let's try again, {name}!") # noqa
 
     return print(f"Congratulations, {name}!")
