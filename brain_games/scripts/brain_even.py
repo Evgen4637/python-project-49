@@ -1,4 +1,4 @@
-from brain_games.file_even import even
+from brain_games.games.file_even import even
 from brain_games.greetings import greet
 
 
