@@ -1,7 +1,9 @@
-import random
+from random import choice, randint
+
 
 def rand_num(start=1, end=100):
-    return random.randint(start, end)
+    return randint(start, end)
+
 
 def rand_sign():
-    return random.choice(["+", "-", "*"])
+    return choice(["+", "-", "*"])
