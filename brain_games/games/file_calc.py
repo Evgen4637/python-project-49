@@ -1,8 +1,9 @@
 from brain_games.cli import welcome_user
-from brain_games.rand import rand_num
+from brain_games.moduls.rand import rand_num, rand_sign
+from brain_games.moduls.utils import check_answer
 
 
-def even():
+def calc():
     name = welcome_user()
     print(f'Hello, {name}')
     print('What is the result of the expression?')
@@ -11,25 +12,27 @@ def even():
     while num < 3:
         x = rand_num()
         y = rand_num()
+        sign = rand_sign()
+        print(f"Question: {x} {sign} {y}")
 
-        print(f"Question: {x} + {y}")
-        # summ = random_one
+        if sign == '+':
+            correct_answer = x + y
+        elif sign == '-':
+            correct_answer = x - y
+        elif sign == '*':
+            correct_answer = x * y
 
-        random = random_number % 2
-        answer = input("Your answer: ")
+        while True:
+            try:
+                answer = input("Your answer: ")
+                answer = int(answer)
+                break
+            except ValueError:
+                print("Please enter a valid integer.")
 
-        if random != 0:
-            if answer == "yes":
-                return print(f"'{answer}' is wrong answer ;(. Correct answer was 'no'. Let's try again, {name}!") # noqa
-            else:
-                num += 1
-                print("Correct!")
+        num, continue_game = check_answer(answer, correct_answer, num, name)
 
-        if random == 0:
-            if answer == "yes":
-                num += 1
-                print("Correct!")
-            else:
-                return print(f"'{answer}' is wrong answer ;(. Correct answer was 'yes'. Let's try again, {name}!") # noqa
+        if not continue_game:
+            return
 
     return print(f"Congratulations, {name}!")

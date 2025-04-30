@@ -1,5 +1,6 @@
 from brain_games.cli import welcome_user
-from brain_games.rand import rand_num
+from brain_games.moduls.rand import rand_num
+from brain_games.moduls.utils import check_answer
 
 
 def even():
@@ -18,11 +19,9 @@ def even():
             print("Please answer 'yes' or 'no'.")
             answer = input("Your answer: ")
 
-        if answer == correct_answer:
-            num += 1
-            print("Correct!")
-        else:
-            return print(
-                f"'{answer}' is wrong answer ;(. Correct answer was '{correct_answer}'. Let's try again, {name}!") # noqa
+        num, continue_game = check_answer(answer, correct_answer, num, name)
+
+        if not continue_game:
+            return
 
     return print(f"Congratulations, {name}!")
