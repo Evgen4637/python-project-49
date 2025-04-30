@@ -2,6 +2,8 @@ setup: install make lint build package-install
 
 test: install build package-install brain-even
 
+test1: install build package-install brain-calc
+
 install:
 	uv sync
 
