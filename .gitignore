@@ -6,3 +6,5 @@ dist/
 .coverage
 coverage.xml
 *_cache/
+demo.cast
+demo1.cast
