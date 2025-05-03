@@ -1,8 +1,11 @@
 setup: install make lint build package-install
 
-test: install build package-install brain-even
+t-even: install make lint build package-install brain-even
 
-test1: install build package-install brain-calc
+t-calc: install make lint build package-install brain-calc
+
+t-gcd: install make lint build package-install brain-gcd
+
 
 install:
 	uv sync
@@ -24,3 +27,6 @@ brain-even:
 
 brain-calc:
 	uv run brain-calc
+
+brain-gcd:
+	uv run brain-gcd
