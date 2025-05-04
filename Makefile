@@ -8,6 +8,8 @@ t-gcd: install make lint build package-install brain-gcd
 
 t-prog: install make lint build package-install brain-progression
 
+t-prime: install make lint build package-install brain-prime
+
 install:
 	uv sync
 
@@ -34,3 +36,6 @@ brain-gcd:
 
 brain-progression:
 	uv run brain-progression
+
+brain-prime:
+	uv run brain-prime

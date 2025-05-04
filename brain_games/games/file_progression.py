@@ -6,7 +6,7 @@ from brain_games.moduls.utils import check_answer
 def progression():
     name = welcome_user()
     print(f'Hello, {name}')
-    print('What is the result of the expression?')
+    print('What number is missing in the progression?')
     num = 0
 
     while num < 3:

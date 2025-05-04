@@ -8,7 +8,7 @@ from brain_games.moduls.utils import check_answer
 def gcd():
     name = welcome_user()
     print(f'Hello, {name}')
-    print('What is the result of the expression?')
+    print('Find the greatest common divisor of given numbers.')
     num = 0
 
     while num < 3:
