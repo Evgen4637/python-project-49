@@ -6,6 +6,7 @@ t-calc: install make lint build package-install brain-calc
 
 t-gcd: install make lint build package-install brain-gcd
 
+t-prog: install make lint build package-install brain-progression
 
 install:
 	uv sync
@@ -30,3 +31,6 @@ brain-calc:
 
 brain-gcd:
 	uv run brain-gcd
+
+brain-progression:
+	uv run brain-progression
