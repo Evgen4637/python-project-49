@@ -1,4 +1,4 @@
-setup: install make lint build package-install
+setup: install make lint build package-install brain-even brain-calc brain-gcd brain-progression brain-prime
 
 t-even: install make lint build package-install brain-even
 
