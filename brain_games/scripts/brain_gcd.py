@@ -1,4 +1,4 @@
-from brain_games.games.file_gcd import gcd
+from brain_games.games.gcd import gcd
 from brain_games.greetings import greet
 
 

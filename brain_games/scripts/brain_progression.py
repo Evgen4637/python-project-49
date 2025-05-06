@@ -1,4 +1,4 @@
-from brain_games.games.file_progression import progression
+from brain_games.games.progression import progression
 from brain_games.greetings import greet
 
 

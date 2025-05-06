@@ -1,4 +1,4 @@
-from brain_games.games.file_calc import calc
+from brain_games.games.calc import calc
 from brain_games.greetings import greet
 
 

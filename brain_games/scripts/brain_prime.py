@@ -1,4 +1,4 @@
-from brain_games.games.file_prime import prime
+from brain_games.games.prime import prime
 from brain_games.greetings import greet
 
 
