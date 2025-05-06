@@ -1,6 +1,6 @@
 from brain_games.cli import welcome_user
 from brain_games.moduls.rand import rand_num
-from brain_games.moduls.utils import check_answer
+from brain_games.moduls.utils import check_answer, numerical_answer
 
 
 def progression():
@@ -19,13 +19,7 @@ def progression():
         progression[hide_index] = '..'
         print("Question:", " ".join(str(x) for x in progression))
 
-        while True:
-            try:
-                answer = input("Your answer: ")
-                answer = int(answer)
-                break
-            except ValueError:
-                print("Please enter a valid integer.")
+        answer = numerical_answer()
 
         num, continue_game = check_answer(answer, correct_answer, num, name)
 

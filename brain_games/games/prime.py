@@ -1,6 +1,6 @@
 from brain_games.cli import welcome_user
 from brain_games.moduls.rand import rand_num
-from brain_games.moduls.utils import check_answer
+from brain_games.moduls.utils import affirmative_answer, check_answer
 
 
 def prime():
@@ -22,10 +22,7 @@ def prime():
             else:
                 correct_answer = 'yes'
 
-        answer = input("Your answer: ")
-        while answer not in ["yes", "no"]:
-            print("Please answer 'yes' or 'no'.")
-            answer = input("Your answer: ")
+        answer = affirmative_answer()
 
         num, continue_game = check_answer(answer, correct_answer, num, name)
 
